@@ -56,17 +56,17 @@ machines_definitions = [
 ]
 
 # 공정 시퀀스 정의
-all_machine_ids_for_sequence = list(range(len(machines_definitions)))
+"""all_machine_ids_for_sequence = list(range(len(machines_definitions)))
 random.shuffle(all_machine_ids_for_sequence)
-PROCESS_SEQUENCE = all_machine_ids_for_sequence
+PROCESS_SEQUENCE = all_machine_ids_for_sequence"""
 # print(f"사용될 공정 시퀀스: {PROCESS_SEQUENCE}")
 
 # 프로세스 스퀀스를 지정하고 싶으면 위 랜덤 주석처리 -> 아래 시퀀스 주석 해제 -> 이후 원하는 스퀀스로 수정
-# PROCESS_SEQUENCE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  # 선형 16단계 공정
+PROCESS_SEQUENCE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  # 선형 16단계 공정
 
 # 팩토리 크기 정의(설비의 개수에 따라 변경 가능)
-FACTORY_WIDTH = 28
-FACTORY_HEIGHT = 28
+FACTORY_WIDTH = 19
+FACTORY_HEIGHT = 19
 
 # 목표 생산량 및 시간 상수
 TARGET_PRODUCTION_PER_HOUR = 35
@@ -242,9 +242,9 @@ def signal_handler(signum, frame):
     interrupted = True
 
 # --- GA 하이퍼파라미터 ---
-POPULATION_SIZE = 300       # 한 세대 내 개체(염색체 또는 해)의 총 수. 클수록 다양한 해를 탐색하지만 계산량이 증가합니다.
+POPULATION_SIZE = 100       # 한 세대 내 개체(염색체 또는 해)의 총 수. 클수록 다양한 해를 탐색하지만 계산량이 증가합니다.
 NUM_GENERATIONS = 300     # 알고리즘이 반복할 총 세대 수. 충분히 커야 최적해에 수렴할 가능성이 높아집니다.
-MUTATION_RATE = 0.5     # 각 개체가 변이 연산을 겪을 확률 (0.0 ~ 1.0). 너무 낮으면 지역 최적해에 빠지기 쉽고, 너무 높으면 수렴이 불안정해질 수 있습니다.
+MUTATION_RATE = 0.3    # 각 개체가 변이 연산을 겪을 확률 (0.0 ~ 1.0). 너무 낮으면 지역 최적해에 빠지기 쉽고, 너무 높으면 수렴이 불안정해질 수 있습니다.
 CROSSOVER_RATE = 0.8      # 두 부모 개체 간에 교차 연산이 발생할 확률 (0.0 ~ 1.0). 일반적으로 높은 값을 사용합니다.
 ELITISM_COUNT = 5         # 각 세대에서 다음 세대로 직접 전달될 가장 우수한 개체의 수. 최고 해의 손실을 방지합니다.
 TOURNAMENT_SIZE = 5       # 토너먼트 선택 방식에서 각 토너먼트에 참여할 개체의 수. 클수록 선택 압력이 높아져 우수한 개체가 더 잘 선택됩니다.
@@ -331,7 +331,7 @@ def crossover(parent1_chromo, parent2_chromo, crossover_rate):
             child2 = parent2_chromo[:cut_point] + parent1_chromo[cut_point:]
     return child1, child2
 
-def mutate(chromosome, machines_in_proc_order_defs, factory_w, factory_h, mutation_rate_per_gene=0.1):
+def mutate(chromosome, machines_in_proc_order_defs, factory_w, factory_h, mutation_rate_per_gene=0.05):
     mutated_chromosome = list(chromosome)
     num_genes = len(chromosome)
     if num_genes == 0: return mutated_chromosome
@@ -368,7 +368,8 @@ if __name__ == '__main__':
     
     best_overall_fitness = -float('inf')
     best_overall_chromosome = None
-    
+    final_machine_positions_map = {}
+
     # [NEW] 로그 리스트 초기화
     generation_best_fitness_log = []
     generation_avg_fitness_log = []
@@ -504,6 +505,23 @@ if __name__ == '__main__':
 
     else: print("유효한 최적 레이아웃을 찾지 못했습니다.")
 
+    # [NEW] 최종 레이아웃 정보 파일로 저장
+    layout_data_to_save = {
+        "factory_width": FACTORY_WIDTH,
+        "factory_height": FACTORY_HEIGHT,
+        "process_sequence": PROCESS_SEQUENCE,
+        "machines_definitions": machines_definitions, # 전체 설비 정보
+        "best_chromosome_coordinates": best_overall_chromosome, # 각 설비의 (x,y) 좌표 리스트
+        "machine_positions_map": final_machine_positions_map # {id: {x,y,center_x,center_y}} 형태
+    }
+    try:
+        import json
+        with open("optimized_layout_data.json", "w", encoding="utf-8") as f:
+            json.dump(layout_data_to_save, f, ensure_ascii=False, indent=4)
+        print("💾 최적 레이아웃 데이터 저장 완료: optimized_layout_data.json")
+    except Exception as e:
+        print(f"레이아웃 데이터 저장 중 오류 발생: {e}")
+
     # --- 그래프 생성 (matplotlib 필요) ---
     # 기존 적합도 그래프
     try:
@@ -548,6 +566,6 @@ if __name__ == '__main__':
         plt.close()
     except ImportError: print("matplotlib 라이브러리가 설치되어 있지 않아 그래프를 생성할 수 없습니다.")
     except Exception as e_graph: print(f"그래프 생성 중 예상치 못한 오류 발생: {e_graph}")
-        
+      
     if interrupted: print("\n✅ 안전하게 중단되었습니다.")
     print("\n프로그램 종료.")
