@@ -67,7 +67,7 @@ python GA_Facility_Optimizer.py
 
 <div align="center">
 
-![Optimized Paths](result/layout_with_paths.png)
+![Optimized Paths](result/layout_with_1paths.png)
 
 **🎨 Visualization of Optimized Material Flow Paths**
 
