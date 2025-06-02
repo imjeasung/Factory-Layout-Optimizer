@@ -45,7 +45,7 @@ python GA_Facility_Optimizer.py
 ## 📊 Results & Visualizations
 
 ### 🏭 Optimized Factory Layout
-![Optimized Layout](results/ga_optimized_layout_visualization.png)
+![Optimized Layout](result/ga_optimized_layout_visualization.png)
 
 **Layout Features:**
 - **Equipment Arrangement**: 16 machines (ID 0-15) optimally positioned
@@ -54,7 +54,7 @@ python GA_Facility_Optimizer.py
 - **Flow Optimization**: Minimized inter-equipment distances
 
 ### 📈 Performance Analysis
-![Performance Analysis](results/ga_factory_layout_analysis_plots.png)
+![Performance Analysis](result/ga_factory_layout_analysis_plots.png)
 
 **Analysis Metrics:**
 - **Fitness Evolution**: Convergence over 300 generations
