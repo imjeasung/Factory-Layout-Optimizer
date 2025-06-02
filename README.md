@@ -48,7 +48,6 @@ To visualize the optimized material flow paths after running the main optimizer 
 ```bash
 python path_visualizer.py
 ```
-*(Ensure `optimized_layout_data.json` is present in the root directory, or modify the script if it's located elsewhere.)*
 
 ## 📊 Results & Visualizations
 
