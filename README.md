@@ -80,18 +80,6 @@ python GA_Facility_Optimizer.py
 - **✅ Population Validity Metrics**: Solution feasibility and constraint satisfaction rates
 - **🎯 Multi-objective Balance**: Trade-off analysis between competing objectives
 
-### 🔄 Algorithm Convergence Analysis
-
-<div align="center">
-
-![Interrupted Analysis](result/ga_factory_layout_analysis_plots_interrupted.png)
-
-**🔍 Detailed Convergence Behavior Study**
-
-</div>
-
-This visualization demonstrates the algorithm's robust convergence characteristics and provides insights into the optimization process stability.
-
 ## 🛠 Technical Specifications
 
 ### Algorithm Parameters
