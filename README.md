@@ -13,14 +13,16 @@ An AI-powered factory layout optimization system using **Genetic Algorithm (GA)*
 
 ### 🔥 Key Results
 
-Our genetic algorithm successfully optimized a real factory layout with **15 equipment units (ID 0-15)** over **300 generations**:
+Our genetic algorithm successfully optimized a real factory layout with **16 equipment units (ID 0-15)** over **300 generations**:
 
 - **🎯 Target Production**: 35 units/hour
 - **⚡ Optimized Throughput**: Achieved target with minimal distance
 - **🔄 Convergence**: Stable optimization over 300 generations
 - **📊 Multi-objective**: Balanced production rate vs. material flow distance
+- **🎨 Visual Analytics**: Comprehensive performance tracking and layout visualization
 
-### Key Features
+## ✨ Key Features
+
 - **🧬 Advanced Genetic Algorithm**: 300 populations × 300 generations evolutionary optimization
 - **🎯 Multi-objective Optimization**: Balances production throughput (35 units/hour) and material flow distance
 - **📊 Real-time Visualization**: Interactive layout visualization with performance analytics
@@ -32,7 +34,7 @@ Our genetic algorithm successfully optimized a real factory layout with **15 equ
 
 ### Prerequisites
 ```bash
-pip install matplotlib
+pip install matplotlib numpy
 ```
 
 ### Installation & Usage
@@ -45,22 +47,50 @@ python GA_Facility_Optimizer.py
 ## 📊 Results & Visualizations
 
 ### 🏭 Optimized Factory Layout
+
+<div align="center">
+
 ![Optimized Layout](result/ga_optimized_layout_visualization.png)
 
-**Layout Features:**
-- **Equipment Arrangement**: 16 machines (ID 0-15) optimally positioned
-- **Color-coded Visualization**: Each equipment has unique identification
-- **Clearance Zones**: Safety and operational space requirements
-- **Flow Optimization**: Minimized inter-equipment distances
+**🎨 Interactive Factory Layout Visualization**
 
-### 📈 Performance Analysis
+</div>
+
+**Layout Features:**
+- **📍 Equipment Arrangement**: 16 machines (ID 0-15) optimally positioned in 19×19 grid
+- **🌈 Color-coded Identification**: Each equipment unit with unique color visualization
+- **🔒 Safety Clearance Zones**: Automated clearance space management
+- **🔄 Optimized Flow Paths**: Minimized inter-equipment material transport distances
+- **📐 Spatial Constraints**: Intelligent footprint management and collision avoidance
+
+### 📈 Comprehensive Performance Analysis
+
+<div align="center">
+
 ![Performance Analysis](result/ga_factory_layout_analysis_plots.png)
 
-**Analysis Metrics:**
-- **Fitness Evolution**: Convergence over 300 generations
-- **Distance Optimization**: Material flow distance minimization
-- **Throughput Analysis**: Production rate optimization
-- **Population Validity**: Solution feasibility tracking
+**📊 Multi-dimensional Algorithm Performance Tracking**
+
+</div>
+
+**Analysis Dashboard Includes:**
+- **📈 Fitness Evolution Curve**: Real-time convergence tracking over 300 generations
+- **📏 Distance Optimization Progress**: Material flow distance minimization trends
+- **⚡ Throughput Performance**: Production rate optimization and target achievement
+- **✅ Population Validity Metrics**: Solution feasibility and constraint satisfaction rates
+- **🎯 Multi-objective Balance**: Trade-off analysis between competing objectives
+
+### 🔄 Algorithm Convergence Analysis
+
+<div align="center">
+
+![Interrupted Analysis](result/ga_factory_layout_analysis_plots_interrupted.png)
+
+**🔍 Detailed Convergence Behavior Study**
+
+</div>
+
+This visualization demonstrates the algorithm's robust convergence characteristics and provides insights into the optimization process stability.
 
 ## 🛠 Technical Specifications
 
@@ -78,10 +108,10 @@ python GA_Facility_Optimizer.py
 3. **✅ Constraint Satisfaction**: Ensure spatial and operational constraints
 
 ### Factory Configuration
-- **📐 Factory Size**: 19×19 grid units
+- **📐 Factory Dimensions**: 19×19 grid units
 - **🏗️ Equipment Count**: 16 manufacturing stations
 - **🔄 Process Sequence**: Linear 16-step production flow
-- **⚡ Material Speed**: 0.5 units/second
+- **⚡ Material Transport Speed**: 0.5 units/second
 
 ## 🎛️ Equipment Specifications
 
@@ -111,18 +141,19 @@ python GA_Facility_Optimizer.py
 fitness = (THROUGHPUT_WEIGHT × throughput) - (DISTANCE_WEIGHT × total_distance)
 ```
 
-**Weights:**
+**Optimization Weights:**
 - `THROUGHPUT_WEIGHT`: 1.0
 - `DISTANCE_WEIGHT`: 0.005
 - `BONUS_ACHIEVEMENT`: 0.2 (when target reached)
 
-### Key Results
-- **🎯 Production Target**: 35 units per hour
-- **📏 Material Speed**: 0.5 units per second  
-- **⚡ Convergence**: Stable optimization after ~150 generations
-- **✅ Solution Validity**: >90% valid solutions maintained
+### Achieved Results
+- **🎯 Production Target**: 35 units per hour ✅
+- **📏 Material Transport Speed**: 0.5 units per second  
+- **⚡ Algorithm Convergence**: Stable optimization after ~150 generations
+- **✅ Solution Validity**: >90% valid solutions maintained throughout evolution
+- **🔄 Consistency**: Reproducible results across multiple runs
 
-## 🔧 Customization
+## 🔧 Customization Guide
 
 ### Equipment Configuration
 ```python
@@ -143,6 +174,14 @@ PROCESS_SEQUENCE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]  # Lin
 FACTORY_WIDTH = 19
 FACTORY_HEIGHT = 19
 ```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -197,7 +236,7 @@ FACTORY_HEIGHT = 19
 
 ### 환경 설정
 ```bash
-pip install matplotlib
+pip install matplotlib numpy
 ```
 
 ### 실행 방법
