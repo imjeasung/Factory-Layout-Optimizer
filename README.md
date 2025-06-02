@@ -23,7 +23,7 @@ Our genetic algorithm successfully optimized a real factory layout with **16 equ
 
 ## ✨ Key Features
 
-- **🧬 Advanced Genetic Algorithm**: 300 populations × 300 generations evolutionary optimization
+- **🧬 Advanced Genetic Algorithm**: N populations × N generations evolutionary optimization
 - **🎯 Multi-objective Optimization**: Balances production throughput (35 units/hour) and material flow distance
 - **📊 Real-time Visualization**: Interactive layout visualization with performance analytics
 - **⚙️ Constraint Handling**: Equipment footprint, clearance zones, and spatial constraints
