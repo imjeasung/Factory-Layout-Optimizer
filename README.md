@@ -27,7 +27,7 @@ pip install matplotlib
 
 ### Installation & Usage
 ```bash
-git clone https://github.com/yourusername/Smart-Factory-Layout-Optimizer.git
+git clone https://github.com/imjeasung/Factory-Layout-Optimizer.git
 cd Smart-Factory-Layout-Optimizer
 python GA_Facility_Optimizer.py
 ```
@@ -132,7 +132,7 @@ pip install matplotlib
 
 ### 실행 방법
 ```bash
-git clone https://github.com/yourusername/Smart-Factory-Layout-Optimizer.git
+git clone https://github.com/imjeasung/Factory-Layout-Optimizer.git
 cd Smart-Factory-Layout-Optimizer
 python GA_Facility_Optimizer.py
 ```
