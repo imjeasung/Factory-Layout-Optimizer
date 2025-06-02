@@ -156,7 +156,6 @@ def get_optimized_access_point_for_sequence(prev_access_point, current_pos_info,
                                           next_pos_info, next_machine_def, obstacle_grid, factory_w, factory_h):
     """
     연속된 3개 설비의 경로를 고려하여 중간 설비의 최적 접근 지점을 찾습니다.
-    한붓그리기식 경로 최적화를 위해 전체 이동 거리를 최소화합니다.
     
     Args:
         prev_access_point: 이전 설비의 접근 지점 (x, y)
@@ -344,7 +343,7 @@ def visualize_layout_with_paths(layout_data, all_paths, filename="layout_with_pa
                 labels_at_start_node[start_node_tuple] = offset_idx + 1
                 path_number += 1
 
-    plt.title("Factory Layout with Optimized Continuous Paths (한붓그리기 최적화)", fontsize=14)
+    plt.title("Factory Layout with Optimized Continuous Paths", fontsize=14)
     plt.xlabel("Factory Width (X)")
     plt.ylabel("Factory Height (Y)")
     plt.gca().invert_yaxis() # Y축을 위에서 아래로 증가
