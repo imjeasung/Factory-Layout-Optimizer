@@ -9,7 +9,7 @@
 
 ## 🎯 Overview
 
-An AI-powered factory layout optimization system using **Genetic Algorithm (GA)** to maximize production efficiency while minimizing material flow distances. This system intelligently arranges **16 manufacturing equipment units** in a **linear 16-step production sequence** to achieve optimal throughput and workflow efficiency.
+A factory layout optimization system using **Genetic Algorithm (GA)** to maximize production efficiency while minimizing material flow distances. This system arranges **16 manufacturing equipment units** in a **linear 16-step production sequence** to achieve optimal throughput and workflow efficiency.
 
 ### 🔥 Key Results
 
@@ -23,9 +23,9 @@ Our genetic algorithm successfully optimized a real factory layout with **16 equ
 
 ## ✨ Key Features
 
-- **🧬 Advanced Genetic Algorithm**: N populations × N generations evolutionary optimization
+- **🧬 Genetic Algorithm**: N populations × N generations evolutionary optimization
 - **🎯 Multi-objective Optimization**: Balances production throughput (35 units/hour) and material flow distance
-- **📊 Real-time Visualization**: Interactive layout visualization with performance analytics
+- **📊 Visualization**: Interactive layout visualization with performance analytics
 - **⚙️ Constraint Handling**: Equipment footprint, clearance zones, and spatial constraints
 - **📈 Progress Monitoring**: Generation-wise fitness evolution and convergence analysis
 - **🔧 Flexible Configuration**: Customizable equipment definitions and process sequences
@@ -61,7 +61,7 @@ python GA_Facility_Optimizer.py
 - **🌈 Color-coded Identification**: Each equipment unit with unique color visualization
 - **🔒 Safety Clearance Zones**: Automated clearance space management
 - **🔄 Optimized Flow Paths**: Minimized inter-equipment material transport distances
-- **📐 Spatial Constraints**: Intelligent footprint management and collision avoidance
+- **📐 Spatial Constraints**: Footprint management and collision avoidance
 
 ### 🚚 Optimized Material Flow Path Visualization
 
@@ -196,7 +196,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🎯 프로젝트 개요
 
-유전 알고리즘(GA)을 활용하여 **16개 설비의 선형 16단계 공정**을 최적화하는 AI 시스템입니다. 생산 효율성을 극대화하면서 물류 동선을 최소화하여 최적의 설비 배치를 찾아줍니다.
+유전 알고리즘(GA)을 활용하여 **16개 설비의 선형 16단계 공정**을 최적화하는 최적화 시스템입니다. 생산 효율성을 극대화하면서 물류 동선을 최소화하여 최적의 설비 배치를 찾아줍니다.
 
 ### 🔥 주요 성과
 
@@ -208,9 +208,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **📊 다중 목표**: 생산율 vs 물류 거리 균형
 
 ### 주요 기능
-- **🧬 고급 유전 알고리즘**: 300개체 × 300세대 진화 최적화
+- **🧬 유전 알고리즘**: 300개체 × 300세대 진화 최적화
 - **🎯 다중 목표 최적화**: 생산량(시간당 35개)과 이동 거리 동시 고려
-- **📊 실시간 시각화**: 성능 분석이 포함된 대화형 레이아웃 시각화
+- **📊 시각화**: 성능 분석이 포함된 대화형 레이아웃 시각화
 - **⚙️ 제약 조건 처리**: 설비 크기, 클리어런스, 공간 제약 고려
 - **📈 진행 상황 모니터링**: 세대별 적합도 진화 및 수렴 분석
 - **🔧 유연한 설정**: 설비 정의 및 공정 순서 커스터마이징
